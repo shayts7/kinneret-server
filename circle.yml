@@ -9,4 +9,4 @@ test:
     - /bin/true
 general:
   artifacts:
-    - target/kinneret-server.jar
+    - target/kinneret-server-1.0-SNAPSHOT.jar
