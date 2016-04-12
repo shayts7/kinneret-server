@@ -1,0 +1,12 @@
+machine:
+  services:
+    - docker
+dependencies:
+  override: 
+  - mvn clean install
+test:
+  override:
+    - /bin/true
+general:
+  artifacts:
+    - target/kinneret-server.jar
