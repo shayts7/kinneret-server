@@ -1,4 +1,5 @@
 [![Circle CI](https://circleci.com/gh/boris-org/kinneret-server/tree/master.svg?style=svg)](https://circleci.com/gh/boris-org/kinneret-server/tree/master)
+[![Travis CI](https://travis-ci.org/boris-org/kinneret-server.svg?branch=master)](https://travis-ci.org/boris-org/kinneret-server)
 [![codecov.io](https://codecov.io/gh/boris-org/kinneret-server/coverage.svg?branch=master)](https://codecov.io/github/boris-org/kinneret-server?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/d6a24d6b4aef48fd8d725e6762b627a6)](https://www.codacy.com/app/boriska70/kinneret-server)
 
