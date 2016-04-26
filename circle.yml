@@ -3,12 +3,13 @@ machine:
     - docker
 dependencies:
   override: 
-  - mvn clean install -DskipTests
+  - mvn clean install -Dmaven.test.skip=true
 test:
   override:
     - mvn test
   post:
-    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/ \;
+    - mkdir -p $CIRCLE_TEST_REPORTS/kinneret-server/
+    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/kinneret-server/ \;
     - bash <(curl -s https://codecov.io/bash)
 general:
   artifacts:
