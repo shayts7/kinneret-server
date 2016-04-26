@@ -1,6 +1,6 @@
-[![Circle CI](https://circleci.com/gh/devops-course/kinneret-server.svg?style=svg)](https://circleci.com/gh/devops-course/kinneret-server)
+[![Circle CI](https://circleci.com/gh/boris-org/kinneret-server/tree/master.svg?style=svg)](https://circleci.com/gh/boris-org/kinneret-server/tree/master)
 [![codecov](https://codecov.io/gh/boris-org/kinneret-server/branch/master/graph/badge.svg)](https://codecov.io/gh/boris-org/kinneret-server)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/6732b290213e42e989233ce893498a30)](https://www.codacy.com/app/shayts7/kinneret-server)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/d6a24d6b4aef48fd8d725e6762b627a6)](https://www.codacy.com/app/boriska70/kinneret-server)
 
 # Preface
 
