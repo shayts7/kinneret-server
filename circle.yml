@@ -3,11 +3,12 @@ machine:
     - docker
 dependencies:
   override: 
-  - mvn clean install
+  - mvn clean install -DskipTests
 test:
   override:
-    - /bin/true
+    - mvn test
   post:
+    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/ \;
     - bash <(curl -s https://codecov.io/bash)
 general:
   artifacts:
