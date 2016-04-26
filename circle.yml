@@ -5,17 +5,16 @@ dependencies:
   override: 
   - mvn clean install -Dmaven.test.skip=true
 test:
-  pre:
-    - curl -sL https://github.com/jpm4j/jpm4j.installers/raw/master/dist/biz.aQute.jpm.run.jar >t.jar
-    - java -jar t.jar -h /home/ubuntu init
-    - jpm install com.codacy:codacy-coverage-reporter:assembly
   override:
     - mvn test
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/kinneret-server/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/kinneret-server/ \;
-    - codacy-coverage-reporter -l Java -r ./kinneret-server/target/site/jacoco/jacoco.xml
     - bash <(curl -s https://codecov.io/bash)
+    - curl http://www.jpm4j.org/install/script > jpmInstall.sh
+    - sudo sh jpmInstall.sh
+    - sudo jpm install com.codacy:codacy-coverage-reporter:assembly
+    - codacy-coverage-reporter -l Java -r ./kinneret-server/target/site/jacoco/jacoco.xml
 general:
   artifacts:
     - target/kinneret-server-1.0-SNAPSHOT.jar
