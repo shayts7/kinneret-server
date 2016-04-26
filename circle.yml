@@ -5,11 +5,15 @@ dependencies:
   override: 
   - mvn clean install -Dmaven.test.skip=true
 test:
+  pre:
+    - curl https://www.jpm4j.org/install/script | sh
+    - jpm install com.codacy:codacy-coverage-reporter:assembly
   override:
     - mvn test
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/kinneret-server/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/kinneret-server/ \;
+    - codacy-coverage-reporter -l Java -r ./target/site/jacoco/jacoco.xml
     - bash <(curl -s https://codecov.io/bash)
 general:
   artifacts:
