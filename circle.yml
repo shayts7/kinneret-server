@@ -11,10 +11,6 @@ test:
     - mkdir -p $CIRCLE_TEST_REPORTS/kinneret-server/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/kinneret-server/ \;
     - bash <(curl -s https://codecov.io/bash)
-    - curl http://www.jpm4j.org/install/script > jpmInstall.sh
-    - sudo sh jpmInstall.sh
-    - sudo jpm install com.codacy:codacy-coverage-reporter:assembly
-    - codacy-coverage-reporter -l Java -r ./kinneret-server/target/site/jacoco/jacoco.xml
 general:
   artifacts:
     - target/kinneret-server-1.0-SNAPSHOT.jar
