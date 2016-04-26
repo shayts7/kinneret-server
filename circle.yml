@@ -19,3 +19,4 @@ test:
 general:
   artifacts:
     - target/kinneret-server-1.0-SNAPSHOT.jar
+
