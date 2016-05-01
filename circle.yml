@@ -14,4 +14,16 @@ test:
 general:
   artifacts:
     - target/kinneret-server-1.0-SNAPSHOT.jar
-
+deployment:
+  staging:
+    branch: master
+    codedeploy:
+      kinneret-server-boris:
+        application_root: /
+        region: ap-southeast-1
+        revision_location:
+          revision_type: S3
+          s3_location:
+            bucket: boris-cd-test
+            key_pattern: kinneret-server-{BRANCH}-{SHORT_COMMIT}
+        deployment_group: ksb-group

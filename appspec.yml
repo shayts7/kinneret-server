@@ -1,0 +1,23 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+  - destination: /home/ubuntu/kinneret-server
+permissions:
+   - object: /home/ubuntu/kinneret-server
+     pattern: "**"
+     owner: ubuntu
+     group: ubuntu
+     mode: 777
+     type:
+       - file
+hooks:
+   BeforeInstall:
+   - location: installjava.sh
+     runas: root
+   ApplicationStart:
+   - location: java -jar kinneret-server.jar server kinneret-server-ubuntu.yml
+     runas: ubuntu
+   ValidateService:
+   - setupvalidation.sh
+

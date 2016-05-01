@@ -1,0 +1,19 @@
+kinneret-server.yml:
+server:
+  applicationConnectors:
+  - type: http
+    port: 9000
+  adminConnectors:
+  - type: http
+    port: 9001
+
+  requestLog:
+    timeZone: UTC
+    appenders:
+     - type: file
+       currentLogFilename: /home/ubuntu/kinneret-server/logs/jetty.log
+       threshold: ALL
+       archive: true
+       archivedLogFilenamePattern: /home/ubuntu/kinneret-server/logs/jetty-%d.log
+       archivedFileCount: 5
+       timeZone: UTC
