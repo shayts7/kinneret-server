@@ -7,6 +7,8 @@ files:
     destination: /home/ubuntu/server
   - source: cd_startapp.sh
     destination: /home/ubuntu/server
+  - source: cd_setenvironment.sh
+    destination: /home/ubuntu/server
 permissions:
   - object: /home/ubuntu
     pattern: "**"
@@ -14,6 +16,9 @@ permissions:
     group: ubuntu
     mode: 777
 hooks:
+  BeforeInstall:
+  - location: cd_setenvironment.sh
+    runas: ubuntu
   ApplicationStart:
   - location: cd_startapp.sh
     runas: ubuntu
