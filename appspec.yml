@@ -1,5 +1,9 @@
 version: 0.0
 os: linux
+  - source: kinneret-server-ubuntu.yml
+    destination: /home/ubuntu
+  - source: target/kinneret-server-1.0-SNAPSHOT.jar
+    destination: /home/ubuntu
 permissions:
    - object: /home/ubuntu
      pattern: "**"
@@ -8,6 +12,6 @@ permissions:
      mode: 777
 hooks:
    ApplicationStart:
-   - location: java -jar ./target/kinneret-server-1.0-SNAPSHOT.jar server kinneret-server-ubuntu.yml
+   - location: $(which java) -jar /home/ubuntu/target/kinneret-server-1.0-SNAPSHOT.jar server /home/ubuntu/kinneret-server-ubuntu.yml
      runas: ubuntu
 
