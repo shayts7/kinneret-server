@@ -13,6 +13,8 @@ files:
     destination: /home/ubuntu/server
   - source: cd_stopapp.sh
     destination: /home/ubuntu/server
+  - source: cd_startserver.sh
+    destination: /home/ubuntu/server
 permissions:
   - object: /home/ubuntu
     pattern: "**"

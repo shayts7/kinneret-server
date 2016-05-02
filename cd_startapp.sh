@@ -1,4 +1,4 @@
 #!/bin/bash
-nohup $(which java) -jar /home/ubuntu/server/kinneret-server-1.0-SNAPSHOT.jar server /home/ubuntu/server/kinneret-server-ubuntu.yml &
+exec ./cd_startserver.sh &
 sleep 10
 exit 0
