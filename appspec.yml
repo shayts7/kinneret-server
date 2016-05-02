@@ -24,7 +24,7 @@ permissions:
 hooks:
   ApplicationStop:
   - location: cd_stopapp.sh
-    runas: ubuntu
+    runas: root
   BeforeInstall:
   - location: cd_setenvironment.sh
     runas: ubuntu
