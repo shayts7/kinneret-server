@@ -1,7 +1,9 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: kinneret-server-ubuntu.yml
+  - destination: /home/ubuntu
+  - source: target/kinneret-server-1.0-SNAPSHOT.jar
   - destination: /home/ubuntu
 permissions:
    - object: /home/ubuntu
