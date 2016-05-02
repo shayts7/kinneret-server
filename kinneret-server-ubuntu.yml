@@ -12,9 +12,9 @@ server:
     timeZone: UTC
     appenders:
      - type: file
-       currentLogFilename: /home/ubuntu/kinneret-server/logs/jetty.log
+       currentLogFilename: /home/ubuntu/server/logs/jetty.log
        threshold: ALL
        archive: true
-       archivedLogFilenamePattern: /home/ubuntu/kinneret-server/logs/jetty-%d.log
+       archivedLogFilenamePattern: /home/ubuntu/server/logs/jetty-%d.log
        archivedFileCount: 5
        timeZone: UTC
