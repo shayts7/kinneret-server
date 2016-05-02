@@ -18,15 +18,15 @@ files:
 permissions:
   - object: /home/ubuntu/server
     pattern: "*.sh"
-    owner: ubuntu
-    group: ubuntu
+    owner: root
+    group: root
     mode: 777
     type:
       - file
   - object: .
     pattern: "*.sh"
-    owner: ubuntu
-    group: ubuntu
+    owner: root
+    group: root
     mode: 777
     type:
       - file
@@ -36,9 +36,10 @@ hooks:
     runas: root
   BeforeInstall:
   - location: cd_setenvironment.sh
-    runas: ubuntu
+    runas: root
   AfterInstall:
   - location: cd_startapp.sh
-    runas: ubuntu
+    runas: root
   ValidateService:
   - location: cd_setupvalidation.sh
+    runas: root
