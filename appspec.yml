@@ -2,17 +2,19 @@ version: 0.0
 os: linux
 files:
   - source: kinneret-server-ubuntu.yml
-    destination: /home/ubuntu
+    destination: /home/ubuntu/server
   - source: target/kinneret-server-1.0-SNAPSHOT.jar
-    destination: /home/ubuntu
+    destination: /home/ubuntu/server
+  - source: cd_startapp.sh
+    destination: /home/ubuntu/server
 permissions:
-   - object: /home/ubuntu
-     pattern: "**"
-     owner: ubuntu
-     group: ubuntu
-     mode: 777
+  - object: /home/ubuntu
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
+    mode: 777
 hooks:
-   ApplicationStart:
-   - location: $(which java) -jar /home/ubuntu/target/kinneret-server-1.0-SNAPSHOT.jar server /home/ubuntu/kinneret-server-ubuntu.yml
-     runas: ubuntu
+  ApplicationStart:
+  - location: cd_startapp.sh
+    runas: ubuntu
 
