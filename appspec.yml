@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-  - destination: /home/ubuntu/kinneret-server
+  - destination: /home/ubuntu
 permissions:
-   - object: /home/ubuntu/kinneret-server
+   - object: /home/ubuntu
      pattern: "**"
      owner: ubuntu
      group: ubuntu
@@ -12,9 +12,6 @@ permissions:
      type:
        - file
 hooks:
-   BeforeInstall:
-   - location: installjava.sh
-     runas: root
    ApplicationStart:
    - location: java -jar ./target/kinneret-server-1.0-SNAPSHOT.jar server kinneret-server-ubuntu.yml
      runas: ubuntu
