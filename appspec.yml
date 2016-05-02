@@ -11,6 +11,8 @@ files:
     destination: /home/ubuntu/server
   - source: cd_setupvalidation.sh
     destination: /home/ubuntu/server
+  - source: cd_stopapp.sh
+    destination: /home/ubuntu/server
 permissions:
   - object: /home/ubuntu
     pattern: "**"
@@ -18,10 +20,13 @@ permissions:
     group: ubuntu
     mode: 777
 hooks:
+  ApplicationStop:
+  - location: cd_stopapp.sh
+    runas: ubuntu
   BeforeInstall:
   - location: cd_setenvironment.sh
     runas: ubuntu
-  ApplicationStart:
+  AfterInstall:
   - location: cd_startapp.sh
     runas: ubuntu
   ValidateService:
