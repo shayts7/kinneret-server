@@ -23,7 +23,7 @@ permissions:
     mode: 777
     type:
       - file
-  - object: .
+  - object: ./
     pattern: "*.sh"
     owner: root
     group: root
