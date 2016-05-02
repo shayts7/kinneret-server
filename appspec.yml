@@ -23,6 +23,13 @@ permissions:
     mode: 777
     type:
       - file
+  - object: .
+    pattern: "*.sh"
+    owner: ubuntu
+    group: ubuntu
+    mode: 777
+    type:
+      - file
 hooks:
   ApplicationStop:
   - location: cd_stopapp.sh
