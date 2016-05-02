@@ -16,7 +16,7 @@ hooks:
    - location: installjava.sh
      runas: root
    ApplicationStart:
-   - location: java -jar kinneret-server.jar server kinneret-server-ubuntu.yml
+   - location: java -jar ./target/kinneret-server-1.0-SNAPSHOT.jar server kinneret-server-ubuntu.yml
      runas: ubuntu
    ValidateService:
    - setupvalidation.sh
