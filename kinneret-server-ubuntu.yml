@@ -1,4 +1,5 @@
-kinneret-server.yml:
+repositoryBasePath: /home/ubuntu/server/kinneret-repo
+
 server:
   applicationConnectors:
   - type: http
