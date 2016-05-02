@@ -31,10 +31,9 @@ permissions:
     type:
       - file
 hooks:
-  ApplicationStop:
+  BeforeInstall:
   - location: cd_stopapp.sh
     runas: root
-  BeforeInstall:
   - location: cd_setenvironment.sh
     runas: root
   AfterInstall:
