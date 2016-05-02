@@ -1,0 +1,6 @@
+language: java
+jdk: oraclejdk8
+notifications:
+  slack:
+    rooms:
+      - boris-teamgroup:ovWDOJJd1aHoNsqGlrmCpk7Z#build

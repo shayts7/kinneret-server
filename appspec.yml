@@ -1,0 +1,37 @@
+version: 0.0
+os: linux
+files:
+  - source: kinneret-server-ubuntu.yml
+    destination: /home/ubuntu/server
+  - source: target/kinneret-server-1.0-SNAPSHOT.jar
+    destination: /home/ubuntu/server
+  - source: cd_startapp.sh
+    destination: /home/ubuntu/server
+  - source: cd_setenvironment.sh
+    destination: /home/ubuntu/server
+  - source: cd_setupvalidation.sh
+    destination: /home/ubuntu/server
+  - source: cd_stopapp.sh
+    destination: /home/ubuntu/server
+  - source: cd_startserver.sh
+    destination: /home/ubuntu/server
+permissions:
+  - object: /home/ubuntu/server
+    pattern: "*.sh"
+    owner: root
+    group: root
+    mode: 777
+    type:
+      - file
+hooks:
+  BeforeInstall:
+  - location: cd_stopapp.sh
+    runas: root
+  - location: cd_setenvironment.sh
+    runas: root
+  AfterInstall:
+  - location: cd_startapp.sh
+    runas: root
+  ValidateService:
+  - location: cd_setupvalidation.sh
+    runas: root
