@@ -23,13 +23,6 @@ permissions:
     mode: 777
     type:
       - file
-  - object: ./
-    pattern: "*.sh"
-    owner: root
-    group: root
-    mode: 777
-    type:
-      - file
 hooks:
   BeforeInstall:
   - location: cd_stopapp.sh
