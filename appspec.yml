@@ -9,6 +9,8 @@ files:
     destination: /home/ubuntu/server
   - source: cd_setenvironment.sh
     destination: /home/ubuntu/server
+  - source: cd_setupvalidation.sh
+    destination: /home/ubuntu/server
 permissions:
   - object: /home/ubuntu
     pattern: "**"
@@ -22,4 +24,5 @@ hooks:
   ApplicationStart:
   - location: cd_startapp.sh
     runas: ubuntu
-
+  ValidateService:
+  - location: cd_setupvalidation.sh
