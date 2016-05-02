@@ -21,6 +21,11 @@ permissions:
     owner: ubuntu
     group: ubuntu
     mode: 777
+ - object: /home/ubuntu/server
+    pattern: "*.sh"
+    owner: ubuntu
+    group: ubuntu
+    mode: 777
 hooks:
   ApplicationStop:
   - location: cd_stopapp.sh
