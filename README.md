@@ -8,6 +8,7 @@ Server demo implementation for the devops course.
 It is based on Dropwizard and Maven
 Unit and System tests are written with Junit and use Dropwizard handy classes.
 
+
 # Build And Run
 * clone the repo
 * To Build and Test the service: run "mvn clean install"
